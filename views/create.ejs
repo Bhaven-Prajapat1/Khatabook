@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khaatabook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-zinc-100 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav
+      class="w-full py-6 px-8 flex items-center justify-between font-medium shadow-md bg-white"
+    >
+      <h2 class="font-bold text-2xl text-black">Khaatabook</h2>
+      <div class="flex gap-8 text-base font-semibold items-center">
+        <a href="/" class="text-sky-900 transition">Home</a>
+        <a href="/create" class="text-sky-900 transition"
+          >Create New Hisaab</a
+        >
+      </div>
+    </nav>
+
+    <!-- Main Section for Create Hisaab -->
+    <section class="flex-grow flex justify-center items-center">
+      <div class="w-full bg-gray-200 max-w-lg p-8 rounded-lg shadow-md border-gray-300">
+        <h2 class="text-2xl font-semibold text-center text-sky-900 mb-10">Create New Collection</h2>
+
+        <form action="/create" method="post" class="flex flex-col space-y-6">
+          <!-- Description Input -->
+          <div>
+            <label for="description" class="block font-semibold text-gray-700 mb-2">Description of Collection</label>
+            <input
+              type="text"
+              name="description"
+              placeholder="Enter collection description"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          <!-- Textarea for Details -->
+          <div>
+            <label for="details" class="block font-semibold text-gray-700 mb-2">Collection Details</label>
+            <textarea
+              name="content"
+              rows="4"
+              placeholder="Enter collection details"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full py-3 bg-sky-600 text-white font-bold rounded-lg hover:bg-sky-900 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >
+            Create Hisaab
+          </button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

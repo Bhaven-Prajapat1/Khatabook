@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khaatabook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-zinc-100 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav
+      class="w-full py-6 px-8 flex items-center justify-between font-medium shadow-md bg-white"
+    >
+      <h2 class="font-bold text-2xl text-black">Khaatabook</h2>
+      <div class="flex gap-8 text-base font-semibold items-center">
+        <a href="/" class="text-sky-900 transition">Home</a>
+        <a href="/create" class="text-sky-900 transition"
+          >Create New Hisaab</a
+        >
+      </div>
+    </nav>
+
+    <!-- Main Section for Create Hisaab -->
+    <section class="flex-grow flex justify-center mt-20">
+      <div class="w-full max-w-lg p-8 rounded-lg">
+        <h2 class="text-2xl font-semibold text-center text-gray-900 mb-10">You are editing file of <span class="text-sky-700 font-semibold"><%= filename.split('.')[0] %></span> date</h2>
+
+        <form action="/update/<%= filename %>" method="post" class="flex flex-col space-y-6">
+        
+          <!-- Textarea for Details -->
+          <div>
+            <label for="details" class="block text-sky-900 text-lg mb-2 px-2 font-bold">Collection Details</label>
+            <textarea
+              name="content"
+              rows="4"
+              placeholder="Update collection details"
+              class="w-full px-4 py-2 border text-lg border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            ><%= filedata %></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full py-3 bg-sky-600 text-white font-bold rounded-lg hover:bg-sky-900 focus:outline-none focus:ring-4 focus:ring-yellow-300"
+          >
+            Update Hisaab
+          </button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

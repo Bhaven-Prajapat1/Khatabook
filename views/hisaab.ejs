@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Details - Khaatabook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav
+  class="w-full py-6 px-8 flex items-center justify-between font-medium shadow-md bg-white"
+>
+  <h2 class="font-bold text-2xl text-black">Khaatabook</h2>
+  <div class="flex gap-8 text-base font-semibold items-center">
+    <a href="/" class="text-sky-900 transition">Home</a>
+    <a href="/create" class="text-sky-900 transition"
+      >Create New Hisaab</a
+    >
+  </div>
+</nav>
+
+  <!-- File Details Section -->
+  <section class="flex-grow flex justify-center items-center">
+    <div class="w-full max-w-3xl bg-gray-200 shadow-lg rounded-lg p-8 my-10">
+      <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">File details..</h1>
+      
+      <!-- File Title -->
+      <div class="mb-5">
+        <h2 class="text-xl font-semibold text-center text-black-700">File Created: <span class="font-semibold text-gray-700"><%= filename.split('.')[0]%></span></h2>
+      </div>
+
+      <!-- File Content -->
+      <div class="mb-6">
+        <textarea rows="8"
+          readonly
+          class="w-full p-4 resize-none border font-semibold rounded-lg outline-none"
+          ><%= filedata %></textarea>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mt-8 flex justify-end gap-4">
+        <a href="/edit/<%= filename %>" class="py-2 px-6 font-semibold  bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Edit</a>
+        <a href="/" class="py-2 px-6 bg-gray-600 font-semibold text-white rounded-lg hover:bg-gray-700 transition">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
